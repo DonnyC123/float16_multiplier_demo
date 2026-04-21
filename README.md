@@ -31,9 +31,6 @@ genus -f synth_opt_low.tcl
 genus -f synth_opt_high.tcl
 ```
 
-Make the output dir before running (synth_opt_low/ or synth_opt_high/) since
-the reports get redirected there.
-
 Both do: read_hdl, elaborate, set_max_delay 2.0, syn_generic, syn_map, syn_opt,
 then report timing/area/gates/power and write the netlist + sdc.
 
