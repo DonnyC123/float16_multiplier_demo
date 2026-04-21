@@ -14,19 +14,30 @@ set_db lef_library /vol/ece303/genus_tutorial/NangateOpenCellLibrary.lef
 elaborate float16_multiplier
 check_design float16_multiplier
 
-set_max_delay 2.0 -from [all_inputs] -to [all_outputs]
+
+# Set timing requirements                                
+set_max_delay 2.0 -from [all_inputs] -to [all_outputs]   
+                                                         
+# Assume 50fF load capacitances everywhere:              
+set_load 0.050 [all_outputs]                             
+                                                         
+# Set 10fF maximum capacitance on all inputs             
+set_max_capacitance 0.010 [all_inputs]                   
+
 
 set_db auto_ungroup both
 
+# Set syn effort low
 set_db syn_opt_effort     low  
 set_db syn_generic_effort low  
 set_db syn_map_effort     low  
 
-
+# Run synthesis 
 syn_generic
 syn_map
 syn_opt
 
+# Save outputs
 report_timing > synth_opt_low/timing.rpt
 report_area   > synth_opt_low/area.rpt
 report_gates  > synth_opt_low/gates.rpt
