@@ -12,11 +12,11 @@ source /vol/ece303/genus_tutorial/cadence.env
 
 ## run_sim.sh
 
-Runs the testbench (float16_multiplier_tb) through xrun.
+Runs the testbench (float16_multiplier_tb) through xcelium
 
 ```
 ./run_sim.sh        # batch, logs to xrun.log, waves in waves.shm
-./run_sim.sh gui    # opens simvision
+./run_sim.sh gui    # opens waveform/gui
 ```
 
 Batch mode uses sim.tcl to dump waves and exit. GUI mode just brings up the tool.
