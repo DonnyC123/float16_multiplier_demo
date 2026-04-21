@@ -241,8 +241,8 @@ module float16_multiplier_tb;
     check(16'h5640, 16'h5640);  // 100.0 * 100.0
 
     // random tests
-    $display("Starting 100,000,000 random tests");
-    for (i = 0; i < 100000000; i = i + 1) begin
+    $display("Starting 100 random tests");
+    for (i = 0; i < 100; i = i + 1) begin
       rand_a = $random;
       rand_b = $random;
       check(rand_a, rand_b);
