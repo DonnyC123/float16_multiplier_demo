@@ -14,7 +14,6 @@ set_db lef_library /vol/ece303/genus_tutorial/NangateOpenCellLibrary.lef
 elaborate float16_multiplier
 check_design float16_multiplier
 
-
 # Set timing requirements                                
 set_max_delay 2.0 -from [all_inputs] -to [all_outputs]   
                                                          
