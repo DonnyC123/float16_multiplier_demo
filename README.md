@@ -81,8 +81,7 @@ Constraints:
 ## Gate-level simulation (zero-delay)
 
 Both gate-sim scripts run with `-delay_mode zero` — no SDF, no timing checks.
-They verify the synthesized netlist is logically equivalent to the RTL. Timing
-sign-off comes from synth's `timing.rpt`, not the gate sim.
+They verify the synthesized netlist is logically equivalent to the RTL.
 
 ```
 ./run_gate_sim.sh              # comb, synth_opt_low netlist, batch
