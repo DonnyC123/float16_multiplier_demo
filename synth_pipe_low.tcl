@@ -47,4 +47,4 @@ report_power  > synth_pipe_low/power.rpt
 
 write_hdl > synth_pipe_low/float16_multiplier.v
 write_sdc > synth_pipe_low/float16_multiplier.sdc
-write_sdf > synth_opt_low/float16_multiplier.sdf
+write_sdf > synth_pipe_low/float16_multiplier.sdf
