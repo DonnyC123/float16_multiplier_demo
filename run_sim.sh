@@ -7,11 +7,11 @@ set -euo pipefail
 TOP=float16_multiplier_tb
 
 RTL=(
-    float16_decoder.v
-    leading_zero_counter.v
-    product_normalizer.v
-    product_rounder.v
-    float16_multiplier.v
+    rtl_comb/float16_decoder.v
+    rtl_comb/leading_zero_counter.v
+    rtl_comb/product_normalizer.v
+    rtl_comb/product_rounder.v
+    rtl_comb/float16_multiplier.v
 )
 
 TB=(

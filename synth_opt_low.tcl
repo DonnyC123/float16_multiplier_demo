@@ -1,5 +1,5 @@
 
-set_db hdl_search_path { . }
+set_db init_hdl_search_path { . rtl_comb }
 read_hdl [list \
     float16_decoder.v \
     leading_zero_counter.v \
@@ -17,8 +17,9 @@ check_design float16_multiplier
 # Set timing requirements                                
 set_max_delay 2.0 -from [all_inputs] -to [all_outputs]   
                                                          
-# Assume 50fF load capacitances everywhere:              
+# Assume 50fF load capacitances as outputs
 set_load 0.050 [all_outputs]                             
+set_input_transition 0.1 [all_inputs]
                                                          
 # Set 10fF maximum capacitance on all inputs             
 set_max_capacitance 0.010 [all_inputs]                   
@@ -44,3 +45,4 @@ report_power  > synth_opt_low/power.rpt
 
 write_hdl > synth_opt_low/float16_multiplier.v
 write_sdc > synth_opt_low/float16_multiplier.sdc
+write_sdf > synth_opt_low/float16_multiplier.sdf
